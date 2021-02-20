@@ -1,0 +1,44 @@
+---
+# front matter for Jekyll recognition
+--- 
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+    --color-red: #d86047;
+    --color-green: #d3df9f;
+    --color-yellow  : #f9f4d6;
+    --color-orange: #e18e75;
+    --color-purple: #5c56a1;
+  }
+  
+  body {
+    @apply text-yellow-600;
+    background-color: var(--color-purple);
+  }
+  
+  .app-nav{
+      @apply w-full fixed bottom-0;
+      ul{
+        @apply flex w-full justify-between;
+        li{
+            @apply text-center w-full p-2;
+            &:nth-child(1){
+                background-color: var(--color-red)
+            }
+            &:nth-child(2){
+                background-color: var(--color-green)
+            }
+            &:nth-child(3){
+                background-color: var(--color-yellow)
+            }
+            &:nth-child(4){
+                background-color: var(--color-purple)
+            }
+        }
+      }
+  }
+  
+@tailwind utilities;

@@ -1,0 +1,14 @@
+{
+    "liveServer.settings.ignoreFiles": [
+
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts"
+    ],
+    "liveSassCompile.settings.autoprefix": [],
+        "css.validate": false,
+        "less.validate": false,
+        "scss.validate": false,
+        "postcss.validate": false
+}
