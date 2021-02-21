@@ -13,9 +13,28 @@
     --color-orange: #e18e75;
     --color-purple: #5c56a1;
   }
+
+  body{
+    background-color: var(--color-red);
+  }
   
-  body {
-    @apply text-yellow-600;
+  .ap-home {
+    background-color: var(--color-red);
+  }
+
+  .ap-gallery{
+    background-color: var(--color-red);
+  }
+
+  .ap-creators{
+    background-color: var(--color-green);
+  }
+
+  .ap-shop{
+    background-color: var(--color-yellow);
+  }
+
+  .ap-sur-mesure{
     background-color: var(--color-purple);
   }
   
@@ -24,18 +43,40 @@
       ul{
         @apply flex w-full justify-between;
         li{
-            @apply text-center w-full p-2;
+            @apply text-center w-full p-2 relative h-10;
+            &:hover{
+                width: 100rem;
+                transition: width ease-out 0.2s;
+                span{
+                    @apply h-full;
+                    transition: height ease-out 0.2s;
+                }
+            }
+            a{
+                @apply absolute inset-x-0 bottom-0 top-2;
+            }
+            span{
+                @apply h-2 w-full inset-x-0 absolute bottom-0;
+            }
             &:nth-child(1){
-                background-color: var(--color-red)
+                span{
+                    background-color: var(--color-red);
+                }
             }
             &:nth-child(2){
-                background-color: var(--color-green)
+                span{
+                    background-color: var(--color-green);
+                }
             }
             &:nth-child(3){
-                background-color: var(--color-yellow)
+                span{
+                    background-color: var(--color-yellow);
+                }
             }
             &:nth-child(4){
-                background-color: var(--color-purple)
+                span{
+                    background-color: var(--color-purple);
+                }
             }
         }
       }
