@@ -32,6 +32,7 @@ github_username:  jekyll
 # Build settings
 plugins:
   - jekyll-postcss
+  - jekyll-purgecss
 
 include: ["node_modules"]
 
