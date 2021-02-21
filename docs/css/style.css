@@ -7894,7 +7894,7 @@ img, video { max-width: 100%; height: auto; }
 
 body { --tw-bg-opacity: 1; background-color: rgba(216, 96, 71, var(--tw-bg-opacity)); --tw-bg-opacity: 1; background-color: rgba(216, 96, 71, var(--tw-bg-opacity)); }
 
-.ap-nav { position: fixed; bottom: 0px; width: 100%; position: fixed; bottom: 0px; width: 100%; }
+.ap-nav { position: fixed; bottom: 0px; --tw-text-opacity: 1; color: rgba(249, 244, 214, var(--tw-text-opacity)); width: 100%; position: fixed; bottom: 0px; --tw-text-opacity: 1; color: rgba(249, 244, 214, var(--tw-text-opacity)); width: 100%; }
 
 .ap-nav ul { display: flex; justify-content: space-between; width: 100%; display: flex; justify-content: space-between; width: 100%; }
 
