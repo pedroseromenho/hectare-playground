@@ -6,16 +6,72 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root {
+    --color-red: #d86047;
+    --color-green: #d3df9f;
+    --color-yellow: #f9f4d6;
+    --color-orange: #e18e75;
+    --color-purple: #5c56a1;
+  }
+  
+
+@font-face {
+  font-family: "Certeau-Regular";
+  font-style: normal;
+  src: url("/assets/fonts/Certeau-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Certeau-Oblique";
+  font-style: italic;
+  src: local(''), url("/assets/fonts/Certeau-Oblique.otf") format("opentype");
+}
+
+
+@mixin item-nav($child, $bg, $text) {
+    &:nth-child(#{$child}){
+        span{
+            background-color: var(--color-#{$bg})
+        }
+        a:hover{
+            color: var(--color-#{$text});
+            font-family: "Certeau-Oblique";
+        }
+    }
+  }
+
+@mixin masonry-grid($count){
+    column-count: $count;
+    column-gap: 1rem;
+    figure {
+        @apply m-0 grid mb-4;
+        grid-template-rows: 1fr auto;
+        break-inside: avoid;
+    }
+    figure > img {
+        grid-row: 1 / -1;
+        grid-column: 1;
+    }
+}
+
   body{
       @apply bg-red;
+      font-family: "Certeau-Regular";
+    }
+
+    header{
+        @apply flex justify-between h-20 w-full items-center;   
+    }
+
+    main{
+        @apply max-w-screen-md m-auto relative;
     }
   
   .ap-nav{
-      @apply w-full fixed bottom-0 text-yellow;
+      @apply w-full fixed bottom-0 text-yellow inset-x-0;
       ul{
         @apply flex w-full justify-between;
         li{
-            @apply text-center w-full p-2 relative h-10;
+            @apply text-center w-full p-2 relative h-14 lowercase;
             &:hover{
                 width: 100rem;
                 transition: width ease-out 0.2s;
@@ -25,44 +81,36 @@
                 }
             }
             a{
-                @apply absolute inset-x-0 bottom-0 top-2;
+                @apply absolute inset-x-0 bottom-2 top-4;
             }
             span{
                 @apply h-2 w-full inset-x-0 absolute bottom-0;
             }
-            &:nth-child(1){
-                span{
-                    @apply bg-red;
-                }
-                a:hover{
-                    @apply text-yellow;
-                }
-            }
-            &:nth-child(2){
-                span{
-                    @apply bg-green;
-                }
-                a:hover{
-                    @apply text-purple;
-                }
-            }
-            &:nth-child(3){
-                span{
-                    @apply bg-yellow;
-                }
-                a:hover{
-                    @apply text-orange;
-                }
-            }
-            &:nth-child(4){
-                span{
-                    @apply bg-purple;
-                    a:hover{
-                        @apply text-green;
-                    }
-                }
-            }
+            @include item-nav(1, 'red', 'yellow');
+            @include item-nav(2, 'green', 'purple');
+            @include item-nav(3, 'yellow', 'orange');
+            @include item-nav(4, 'purple', 'green');
+            @include item-nav(5, 'yellow', 'purple');
         }
+      }
+  }
+
+  .ap-home{
+      @apply h-screen bg-red text-yellow mb-40;
+      .ap-nav{
+        @apply bg-red
+      }
+      .--logo{
+        background: url("/assets/images/splashpage-graphic-fr.svg");
+        @apply w-full h-80 bg-contain bg-no-repeat bg-center m-auto mt-16;
+      }
+      .ap-gallery{
+          @apply absolute;
+          top: calc(100vh - 170px);
+          .--images{
+            @apply mt-10;
+           @include masonry-grid(2)
+          }
       }
   }
   
