@@ -7898,11 +7898,25 @@ img, video { max-width: 100%; height: auto; }
 
 @font-face { font-family: "Certeau-Oblique"; font-style: italic; src: local(""), url("/assets/fonts/Certeau-Oblique.otf") format("opentype"); }
 
-body { background-color: var(--color-red); background-color: var(--color-red); font-family: "Certeau-Regular"; }
+html { height: 100%; height: 100%; scroll-behavior: smooth; }
 
-header { display: flex; align-items: center; justify-content: space-between; height: 5rem; width: 100%; display: flex; align-items: center; justify-content: space-between; height: 5rem; width: 100%; }
+body { background-color: var(--color-red); height: 100%; background-color: var(--color-red); height: 100%; font-family: "Certeau-Regular"; }
 
-main { margin: auto; max-width: 768px; position: relative; margin: auto; max-width: 768px; position: relative; }
+header { display: flex; align-items: center; height: 3.5rem; padding-left: 1rem; padding-right: 1rem; position: fixed; top: 0px; width: 100%; z-index: 10; display: flex; align-items: center; height: 3.5rem; padding-left: 1rem; padding-right: 1rem; position: fixed; top: 0px; width: 100%; z-index: 10; }
+
+header .--container { display: flex; align-items: center; justify-content: space-between; margin: auto; max-width: 1280px; display: flex; align-items: center; justify-content: space-between; margin: auto; max-width: 1280px; width: 1280px; }
+
+header .--container ul { align-items: center; justify-content: space-between; align-items: center; justify-content: space-between; }
+
+header .--container ul li { padding-left: 0.25rem; padding-right: 0.25rem; padding-left: 0.25rem; padding-right: 0.25rem; }
+
+main { margin: auto; max-width: 768px; padding-left: 1rem; padding-right: 1rem; position: relative; margin: auto; max-width: 768px; padding-left: 1rem; padding-right: 1rem; position: relative; }
+
+@media (min-width: 640px) { main { padding-left: 0px; padding-right: 0px; padding-left: 0px; padding-right: 0px; } }
+
+.link-hover, .link-hover > svg { opacity: 1; opacity: 1; }
+
+.link-hover:hover, .link-hover:active, .link-hover > svg:hover, .link-hover > svg:active { opacity: 0.8; transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 1, 1); transition-duration: 75ms; opacity: 0.8; transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 1, 1); transition-duration: 75ms; }
 
 .ap-nav { position: fixed; right: 0px; left: 0px; bottom: 0px; color: var(--color-yellow); width: 100%; position: fixed; right: 0px; left: 0px; bottom: 0px; color: var(--color-yellow); width: 100%; }
 
@@ -7920,37 +7934,97 @@ main { margin: auto; max-width: 768px; position: relative; margin: auto; max-wid
 
 .ap-nav ul li:nth-child(1) span { background-color: var(--color-red); }
 
-.ap-nav ul li:nth-child(1) a:hover { color: var(--color-yellow); font-family: "Certeau-Oblique"; }
+.ap-nav ul li:nth-child(1) a:hover { color: var(--color-yellow); }
 
 .ap-nav ul li:nth-child(2) span { background-color: var(--color-green); }
 
-.ap-nav ul li:nth-child(2) a:hover { color: var(--color-purple); font-family: "Certeau-Oblique"; }
+.ap-nav ul li:nth-child(2) a:hover { color: var(--color-purple); }
 
 .ap-nav ul li:nth-child(3) span { background-color: var(--color-yellow); }
 
-.ap-nav ul li:nth-child(3) a:hover { color: var(--color-orange); font-family: "Certeau-Oblique"; }
+.ap-nav ul li:nth-child(3) a:hover { color: var(--color-orange); }
 
 .ap-nav ul li:nth-child(4) span { background-color: var(--color-purple); }
 
-.ap-nav ul li:nth-child(4) a:hover { color: var(--color-green); font-family: "Certeau-Oblique"; }
+.ap-nav ul li:nth-child(4) a:hover { color: var(--color-green); }
 
 .ap-nav ul li:nth-child(5) span { background-color: var(--color-yellow); }
 
-.ap-nav ul li:nth-child(5) a:hover { color: var(--color-purple); font-family: "Certeau-Oblique"; }
+.ap-nav ul li:nth-child(5) a:hover { color: var(--color-purple); }
 
-.ap-home { background-color: var(--color-red); height: 100vh; margin-bottom: 10rem; color: var(--color-yellow); background-color: var(--color-red); height: 100vh; margin-bottom: 10rem; color: var(--color-yellow); }
+.page { height: 100vh; margin-bottom: 10rem; height: 100vh; margin-bottom: 10rem; }
 
-.ap-home .ap-nav { background-color: var(--color-red); background-color: var(--color-red); }
+.ap-logo { height: 1.75rem; opacity: 1; transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 75ms; height: 1.75rem; opacity: 1; transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 75ms; }
 
-.ap-home .--logo { background: url("/assets/images/splashpage-graphic-fr.svg"); background-position: center; background-repeat: no-repeat; background-size: contain; height: 20rem; margin: auto; margin-top: 4rem; width: 100%; background-position: center; background-repeat: no-repeat; background-size: contain; height: 20rem; margin: auto; margin-top: 4rem; width: 100%; }
+@media (min-width: 640px) { .ap-logo { height: 1.25rem; height: 1.25rem; } }
 
-.ap-home .ap-gallery { position: absolute; position: absolute; top: calc(100vh - 170px); }
+.ap-logo span, .ap-logo div { display: inline-block; vertical-align: middle; display: inline-block; vertical-align: middle; }
+
+.ap-logo .--dash { display: inline-block; height: 2rem; position: relative; vertical-align: middle; width: 1rem; display: inline-block; height: 2rem; position: relative; vertical-align: middle; width: 1rem; transition: all .2s ease-in-out; }
+
+.ap-logo .--dash:before { display: inline-block; height: 0.125rem; position: absolute; left: 0px; width: 100%; display: inline-block; height: 0.125rem; position: absolute; left: 0px; width: 100%; content: ''; bottom: 0.9rem; }
+
+.ap-logo .--dash.active, .ap-logo .--dash.level1 { width: 4rem; width: 4rem; }
+
+.ap-logo .--dash.active + span, .ap-logo .--dash.level1 + span { padding-left: 0.25rem; padding-right: 0.25rem; padding-left: 0.25rem; padding-right: 0.25rem; }
+
+.ap-logo .--dash.active + span + .--dash { width: 6rem; width: 6rem; }
+
+.ap-logo .--dash.level2, .ap-logo .--dash.level3 { width: 2rem; width: 2rem; }
+
+.js-hide-logo { opacity: 0; opacity: 0; }
+
+.ap-home .ap-nav, .ap-home header { background-color: var(--color-red); background-color: var(--color-red); }
+
+.ap-home .ap-nav { color: var(--color-yellow); color: var(--color-yellow); }
+
+.ap-home .--dash::before { background-color: var(--color-yellow); background-color: var(--color-yellow); }
+
+.ap-home .--logo { background: url("/assets/images/splashpage-graphic-fr.svg"); background-position: center; background-repeat: no-repeat; background-size: contain; height: 20rem; margin: auto; margin-top: 2rem; width: 20rem; background-position: center; background-repeat: no-repeat; background-size: contain; height: 20rem; margin: auto; margin-top: 2rem; width: 20rem; }
+
+@media (min-width: 640px) { .ap-home .--logo { margin-top: 8rem; margin-top: 10rem; width: 100%; margin-top: 8rem; margin-top: 10rem; width: 100%; } }
+
+.ap-home .--shop-link:hover, .ap-home .--shop-link:active { background-color: var(--color-yellow); color: var(--color-red); background-color: var(--color-yellow); color: var(--color-red); }
+
+.ap-home .--shop-link:hover, .ap-home .--shop-link:active { transition: all .2s ease-out; }
+
+.ap-home .js-hide-gallery-link { opacity: 0; opacity: 0; }
+
+.ap-home .ap-gallery { padding-bottom: 1rem; padding-top: 2.5rem; padding-bottom: 1rem; padding-top: 2.5rem; }
+
+@media (min-width: 640px) { .ap-home .ap-gallery { padding-left: 1rem; padding-right: 1rem; padding-top: 0px; padding-bottom: 5rem; position: absolute; right: 0px; left: 0px; padding-left: 1rem; padding-right: 1rem; padding-top: 0px; padding-bottom: 5rem; position: absolute; right: 0px; left: 0px; } }
+
+@media screen and (min-width: 640px) { .ap-home .ap-gallery { padding-top: 100px; margin-top: -100px; top: calc(100vh - 170px); } }
 
 .ap-home .ap-gallery .--images { margin-top: 2.5rem; margin-top: 2.5rem; -moz-column-count: 2; column-count: 2; -moz-column-gap: 1rem; column-gap: 1rem; }
 
 .ap-home .ap-gallery .--images figure { display: grid; margin: 0px; margin-bottom: 1rem; display: grid; margin: 0px; margin-bottom: 1rem; grid-template-rows: 1fr auto; -moz-column-break-inside: avoid; break-inside: avoid; }
 
 .ap-home .ap-gallery .--images figure > img { grid-row: 1 / -1; grid-column: 1; }
+
+.ap-shop .ap-nav, .ap-shop header { background-color: var(--color-yellow); background-color: var(--color-yellow); }
+
+.ap-shop .ap-nav { color: var(--color-orange); color: var(--color-orange); }
+
+.ap-shop .--dash::before { background-color: var(--color-orange); background-color: var(--color-orange); }
+
+.ap-creators .ap-nav, .ap-creators header { background-color: var(--color-green); background-color: var(--color-green); }
+
+.ap-creators .ap-nav { color: var(--color-purple); color: var(--color-purple); }
+
+.ap-creators .--dash::before { background-color: var(--color-purple); background-color: var(--color-purple); }
+
+.ap-sur-mesure .ap-nav, .ap-sur-mesure header { background-color: var(--color-purple); background-color: var(--color-purple); }
+
+.ap-sur-mesure .ap-nav { color: var(--color-green); color: var(--color-green); }
+
+.ap-sur-mesure .--dash::before { background-color: var(--color-green); background-color: var(--color-green); }
+
+.ap-contact .ap-nav, .ap-contact header { background-color: var(--color-yellow); background-color: var(--color-yellow); }
+
+.ap-contact .ap-nav { color: var(--color-purple); color: var(--color-purple); }
+
+.ap-contact .--dash::before { background-color: var(--color-purple); background-color: var(--color-purple); }
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0px * var(--tw-space-y-reverse)); }
 

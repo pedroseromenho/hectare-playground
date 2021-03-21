@@ -3,13 +3,24 @@ layout: default
 title: Hectare playground
 ---
 
-<div class='ap-home' data-barba="container" data-barba-namespace="home">
+<div class='ap-home page bg-red text-yellow' data-barba="container" data-barba-namespace="home">
 {% include header.html %}
 <main>
     <div class='--logo'></div>
-    <p class='text-center mt-32 text-lg'>86 rue faider 1050 Bruxelles | merc 11-18h sam | atelier@hectare-galerie.be</p>
-    <div class='ap-gallery' id="gallery">
-        <p class='text-center text-lg'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu diam purus. Donec id odio nibh. Morbi hendrerit libero at mollis sagittis. In tempor in mauris in interdum. Donec rutrum quis lectus eget volutpat. Nunc scelerisque arcu id elit efficitur, nec vulputate dui vulputate. Curabitur pellentesque mi vel tellus ultricies eleifend.</p> 
+    <p class='text-center mt-5 sm:mt-32 sm:text-lg'>86 rue faider 1050 Bruxelles | merc 11-18h sam | atelier@hectare-galerie.be</p>
+    <div class="block sm:hidden text-center text-xl italic mt-10">
+        <a class="--shop-link border-2 rounded-sm py-1 block" href="/shop">Shop</a>
+    </div>
+    <ul class="sm:hidden flex justify-center mt-10">
+        {% include social-links.html %}
+    </ul>
+    <a class="js-gallery-link animate-pulse hidden sm:flex justify-center opacity-90 mt-16 transition-opacity duration-75 ease-in-out" href="/#gallery">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="6em" width="6em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 01.67-.223L8 9.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z" clip-rule="evenodd"></path></svg>
+    </a>
+    <section class='ap-gallery' id="gallery">
+        <p class='text-center text-lg'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu diam purus. Donec id odio nibh. Morbi hendrerit libero at mollis sagittis. In tempor in mauris in interdum. Donec rutrum quis lectus eget volutpat. Nunc scelerisque arcu id elit efficitur, nec vulputate dui vulputate. Curabitur pellentesque mi vel tellus ultricies eleifend.
+        </p> 
         <div class='--images'>   
             {% for item in site.data.gallery-images %}
             <figure>
@@ -17,12 +28,19 @@ title: Hectare playground
             </figure>
             {% endfor %}
         </div>
-        <div>
+        <div class="mt-5">
             <p>Mauris eget ligula aliquam, tempor lectus vel, mollis nunc. Etiam eu dui vitae ante porttitor dapibus. Maecenas fringilla porttitor iaculis. Proin vel molestie purus. Aenean dictum consectetur nisi, nec imperdiet ex dapibus et. Proin fringilla gravida gravida. Nullam urna lacus, hendrerit et magna a, gravida blandit ex. Etiam a porttitor diam. Pellentesque porta mi feugiat sollicitudin hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vehicula, tortor eget varius molestie, ex urna luctus sapien, sed hendrerit magna nunc id magna. Nulla condimentum, mi ac condimentum finibus, felis sem pretium nisi, ut ultrices lacus arcu eu lacus. Aenean convallis augue id eros euismod placerat. Nullam maximus vehicula sollicitudin. Pellentesque at sem urna. Proin in erat tempor, gravida tortor a, sodales ante.</p>
-
             <p>Proin gravida pretium maximus. Fusce aliquet, magna in aliquam dignissim, orci tortor interdum ligula, at hendrerit arcu sapien eu dui. Etiam tempor congue nibh, sed vehicula ipsum tempor ut. Pellentesque dolor mauris, pharetra sed lorem in, ornare ullamcorper turpis. Vestibulum ullamcorper urna ac ornare consequat. Duis dapibus sodales mattis. Praesent venenatis viverra tristique. Fusce viverra nec lacus blandit tempor. Nunc velit tellus, bibendum at nulla eu, tristique pretium augue. Vivamus in felis aliquam, eleifend ligula vitae, euismod dolor. Sed non eros ornare lectus congue efficitur a sed ipsum.</p>
         </div>
-    </div>
+        <div class="mt-5">
+            <p>Horaires:</p>
+            <p>mer-sam 11h-18h30</p>
+        </div>
+        <div class="mt-10 sm:mt-20 text-center text-xs flex justify-around max-w-lg m-auto flex-col sm:flex-row">
+            <p>2021 ©Hectare galerie</p>
+            <p><a href="#" class="link-hover">Mentions légales</a> | <a href="#" class="link-hover">Conditions générales de vente</a></p>
+        </div>
+    </section>
     {% include nav.html %}
 </main>
 </div>

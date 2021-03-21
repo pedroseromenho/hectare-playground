@@ -34,7 +34,6 @@
         }
         a:hover{
             color: var(--color-#{$text});
-            font-family: "Certeau-Oblique";
         }
     }
   }
@@ -53,17 +52,41 @@
     }
 }
 
+html{
+    @apply h-full;
+    scroll-behavior: smooth;
+}
+
   body{
-      @apply bg-red;
+      @apply bg-red h-full;
       font-family: "Certeau-Regular";
     }
 
     header{
-        @apply flex justify-between h-20 w-full items-center;   
+        @apply flex items-center h-14 w-full fixed top-0 z-10 px-4;
+        .--container{
+            @apply flex justify-between items-center max-w-screen-xl m-auto;
+            width: 1280px;
+            ul{
+                @apply justify-between items-center;
+                li{
+                    @apply px-1
+                }
+            }
+        }
     }
 
     main{
-        @apply max-w-screen-md m-auto relative;
+        @apply max-w-screen-md m-auto relative px-4 sm:px-0;
+    }
+
+    .link-hover,
+    .link-hover > svg{
+        @apply opacity-100;
+        &:hover,
+        &:active{
+            @apply transition-opacity duration-75 ease-in opacity-80;
+        }
     }
   
   .ap-nav{
@@ -95,23 +118,129 @@
       }
   }
 
+  .page{
+      @apply h-screen mb-40;
+  }
+
+  .ap-logo{
+      @apply h-7 sm:h-5 opacity-100 transition-opacity duration-75 ease-in-out;
+      span, div{
+          @apply inline-block align-middle;
+      }
+      .--dash{
+        @apply relative inline-block align-middle w-4 h-8;
+        transition: all .2s ease-in-out;
+          &:before{
+            @apply absolute inline-block w-full h-0.5 left-0;
+            content: '';
+            bottom: 0.9rem;
+          }
+        }
+    .--dash.active, 
+    .--dash.level1{
+        @apply w-16;
+    }
+    .--dash.active + span,
+    .--dash.level1 + span{
+        @apply px-1;
+    }
+    .--dash.active + span + .--dash{
+        @apply w-24;
+    }
+    .--dash.level2, 
+    .--dash.level3 {
+        @apply w-8;
+    }
+  }
+
+  .js-hide-logo{
+    @apply opacity-0;
+  }
+
   .ap-home{
-      @apply h-screen bg-red text-yellow mb-40;
-      .ap-nav{
+      .ap-nav, header{
         @apply bg-red
+      }
+      .ap-nav{
+          @apply text-yellow;
+      }
+      .--dash::before{
+          @apply bg-yellow;
       }
       .--logo{
         background: url("/assets/images/splashpage-graphic-fr.svg");
-        @apply w-full h-80 bg-contain bg-no-repeat bg-center m-auto mt-16;
+        @apply sm:w-full w-80 h-80 bg-contain bg-no-repeat bg-center m-auto sm:mt-40 mt-8 sm:mt-32;
+      }
+      .--shop-link{
+          &:hover,
+          &:active{
+              @apply bg-yellow text-red;
+              transition: all .2s ease-out;
+          }
+      }
+      .js-hide-gallery-link{
+          @apply opacity-0;
       }
       .ap-gallery{
-          @apply absolute;
-          top: calc(100vh - 170px);
+          @apply sm:absolute sm:pb-20 sm:px-4 sm:inset-x-0 pb-4 sm:pt-0 pt-10;
+          @media screen and (min-width: 640px){              
+              padding-top: 100px; 
+              margin-top: -100px;
+              top: calc(100vh - 170px);
+            }
           .--images{
             @apply mt-10;
            @include masonry-grid(2)
           }
       }
   }
+
+  .ap-shop{
+    .ap-nav, header{
+      @apply bg-yellow
+    }
+    .ap-nav{
+        @apply text-orange;
+    }
+    .--dash::before{
+        @apply bg-orange;
+    }
+}
+
+.ap-creators{
+    .ap-nav, header{
+      @apply bg-green
+    }
+    .ap-nav{
+        @apply text-purple;
+    }
+    .--dash::before{
+        @apply bg-purple;
+    }
+}
+
+.ap-sur-mesure{
+    .ap-nav, header{
+      @apply bg-purple
+    }
+    .ap-nav{
+        @apply text-green;
+    }
+    .--dash::before{
+        @apply bg-green;
+    }
+}
+
+.ap-contact{
+    .ap-nav, header{
+      @apply bg-yellow
+    }
+    .ap-nav{
+        @apply text-purple;
+    }
+    .--dash::before{
+        @apply bg-purple;
+    }
+}
   
 @tailwind utilities;
